@@ -29,13 +29,19 @@
 
 ## Installation
 
-1. Create file `service-worker.js`:
+1. Check, that you site is running on HTTPS.
+
+    :bulb: Hint: Add redirect from HTTP to HTTPS.
+
+2. Create file `service-worker.js`:
 
     ```js
-    // Update value, when would you like to reinstall Service Worker
+    // Update value, when would you like to reinstall Service Worker.
+    // HINT: Update value on every deploy.
     self.CACHED_NAME = 'demo-1.0.0';
 
-    // Append URL to precache. Cannot use wildcards.
+    // Append URL to precache.
+    // WARNING: Cannot use wildcards.
     self.PRECACHE_FILES = [
         '/',
         '/index.html'
@@ -46,46 +52,69 @@
     }
     ```
 
-2. Register `Service Worker` by adding code in file `main.js`:
+3. Register `Service Worker` by adding code in file `main.js`:
 
     ```js
-    const SERVICE_WORKER_URL = '/service-worker.js';
-    const isServiceWorkerSupported = ('serviceWorker' in navigator);
+    // What part of app should handle Service Worker
+    const SERVICE_WORKER_SCOPE = '/demo/';
 
-    if (isServiceWorkerSupported) {
+    // File, where Service Worker is defined
+    const SERVICE_WORKER_URL = '/demo/service-worker.js';
+
+    async function setupServiceWorker() {
+        // console.log('[App] Call setupServiceWorker()');
+        const isServiceWorkerSupported = ('serviceWorker' in navigator);
+
+        if (!isServiceWorkerSupported) {
+            console.warn('[App] Service Workers are not supported');
+            return;
+        }
+
         const isRegistered = navigator.serviceWorker.controller
             && (navigator.serviceWorker.controller.state === 'activated');
 
         if (isRegistered) {
-            console.log('[App] Service Worker was registered. Do not register again');
-        } else {
-            console.log('[App] New Service Worker is registered');
-            navigator.serviceWorker.register(SERVICE_WORKER_URL);
+            console.log('[App] Service Worker was registered yet');
+            return;
         }
+
+        registerServiceWorker();
     }
+
+    async function registerServiceWorker() {
+        // console.log('[App] Call registerServiceWorker()');
+        await navigator.serviceWorker.register(SERVICE_WORKER_URL, {
+            scope: SERVICE_WORKER_SCOPE
+        });
+        console.log(`[App] New Service Worker is register (scope: ${SERVICE_WORKER_SCOPE})`);
+    }
+
+    setupServiceWorker().catch((err) => {
+        console.error('[App] Registration of new Service Worker failed', { err });
+    });
     ```
 
 ## Available strategies
 
-### `Network first` strategy
+### (TODO) `Network first` strategy
 
 ```js
 self.importScripts('https://offline-strategy.herokuapp.com/network-first.js');
 ```
 
-### `Cache first` strategy
+### (TODO) `Cache first` strategy
 
 ```js
 self.importScripts('https://offline-strategy.herokuapp.com/cache-first.js');
 ```
 
-### `Network first, fallback Cache` strategy
+### (TODO) `Network first, fallback Cache` strategy
 
 ```js
 self.importScripts('https://offline-strategy.herokuapp.com/network-first-fallback-cache.js');
 ```
 
-### `Cache first, fallback Network` strategy
+### (TODO) `Cache first, fallback Network` strategy
 
 ```js
 self.importScripts('https://offline-strategy.herokuapp.com/cache-first-fallback-network.js');

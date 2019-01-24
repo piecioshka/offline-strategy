@@ -40,7 +40,8 @@ async function removeOldCaches() {
 self.addEventListener('fetch', handleFetch);
 
 function handleFetch(evt) {
-    console.log('Event: fetch', { evt });
+    const url = evt.request && evt.request.url;
+    console.log('Event: fetch', url, { evt });
     evt.respondWith(hybridStrategy(evt));
 }
 

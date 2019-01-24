@@ -1,7 +1,9 @@
-// Update value, when would you like to reinstall Service Worker
+// Update value, when would you like to reinstall Service Worker.
+// HINT: Update value on every deploy.
 self.CACHED_NAME = 'demo-1.0.0';
 
-// Append URL to precache. Cannot use wildcards.
+// Append URL to precache.
+// WARNING: Cannot use wildcards.
 self.PRECACHE_FILES = [
     '/demo/',
     '/demo/main.js',
@@ -9,5 +11,5 @@ self.PRECACHE_FILES = [
 ];
 
 if (navigator.onLine) {
-    self.importScripts('/hybrid.js');
+    self.importScripts('https://offline-strategy.herokuapp.com/hybrid.js');
 }
