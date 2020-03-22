@@ -1,7 +1,5 @@
 # offline-strategy
 
-[![dependencies](https://david-dm.org/piecioshka/offline-strategy.svg)](https://github.com/piecioshka/offline-strategy)
-
 :hammer: Enable **offline mode** in your page!
 
 ## Demo 🎉
