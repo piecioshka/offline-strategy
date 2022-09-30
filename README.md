@@ -4,7 +4,7 @@
 
 ## Demo 🎉
 
-<https://offline-strategy.herokuapp.com/demo/>
+<https://offline-strategy.piecioshka.io/demo/>
 
 ## Features
 
@@ -46,7 +46,7 @@
     ];
 
     if (navigator.onLine) {
-        self.importScripts('https://offline-strategy.herokuapp.com/hybrid.js');
+        self.importScripts('https://offline-strategy.piecioshka.io/hybrid.js');
     }
     ```
 
@@ -97,31 +97,31 @@
 ### (TODO) `Network first` strategy
 
 ```js
-self.importScripts('https://offline-strategy.herokuapp.com/network-first.js');
+self.importScripts('https://offline-strategy.piecioshka.io/network-first.js');
 ```
 
 ### (TODO) `Cache first` strategy
 
 ```js
-self.importScripts('https://offline-strategy.herokuapp.com/cache-first.js');
+self.importScripts('https://offline-strategy.piecioshka.io/cache-first.js');
 ```
 
 ### (TODO) `Network first, fallback Cache` strategy
 
 ```js
-self.importScripts('https://offline-strategy.herokuapp.com/network-first-fallback-cache.js');
+self.importScripts('https://offline-strategy.piecioshka.io/network-first-fallback-cache.js');
 ```
 
 ### (TODO) `Cache first, fallback Network` strategy
 
 ```js
-self.importScripts('https://offline-strategy.herokuapp.com/cache-first-fallback-network.js');
+self.importScripts('https://offline-strategy.piecioshka.io/cache-first-fallback-network.js');
 ```
 
 ### `Hybrid` strategy
 
 ```js
-self.importScripts('https://offline-strategy.herokuapp.com/hybrid.js');
+self.importScripts('https://offline-strategy.piecioshka.io/hybrid.js');
 ```
 
 ## Related

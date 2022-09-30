@@ -10,12 +10,8 @@
         "url": "https://piecioshka.pl/"
     },
     "scripts": {
-        "clear": "rm -rf dist/ coverage/ .nyc_output/",
-        "clear:all": "rm -rf node_modules/ && npm run clear",
         "start": "http-server src/",
-        "count": "find . -name '*.js' -not -path './node_modules/*' | xargs wc -l | sort -r",
-        "lint": "eslint .",
-        "deploy": "git push -f heroku master"
+        "lint": "eslint ."
     },
     "dependencies": {
         "http-server": "^0.12.1"

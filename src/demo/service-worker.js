@@ -11,5 +11,5 @@ self.PRECACHE_FILES = [
 ];
 
 if (navigator.onLine) {
-    self.importScripts('https://offline-strategy.herokuapp.com/hybrid.js');
+    self.importScripts('https://offline-strategy.piecioshka.io/hybrid.js');
 }
