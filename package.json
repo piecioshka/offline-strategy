@@ -17,8 +17,8 @@
         "http-server": "^14.1.1"
     },
     "devDependencies": {
-        "eslint": "^8.24.0",
-        "eslint-config-piecioshka": "^2.0.2"
+        "eslint": "^8.30.0",
+        "eslint-config-piecioshka": "^2.2.4"
     },
     "repository": {
         "type": "git",
