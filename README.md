@@ -2,7 +2,7 @@
 
 :hammer: Enable **offline mode** in your page!
 
-## Demo 🎉
+## Preview 🎉
 
 <https://offline-strategy.piecioshka.io/demo/>
 
