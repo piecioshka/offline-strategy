@@ -10,7 +10,7 @@
         "url": "https://piecioshka.pl/"
     },
     "scripts": {
-        "start": "http-server src/ --port $PORT",
+        "start": "http-server src/ -c-1 --port $PORT",
         "lint": "eslint ."
     },
     "dependencies": {
